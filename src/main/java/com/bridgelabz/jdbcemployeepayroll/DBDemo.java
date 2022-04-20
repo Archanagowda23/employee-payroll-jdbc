@@ -3,7 +3,7 @@ package com.bridgelabz.jdbcemployeepayroll;
 /**
  * @author : Archana
  * @Since :18-04-2022
- * @purpose : MySQL DB
+ * @purpose : Test Database Connectivity and Demonstrate JDBC Statement
  */
 
 import java.sql.Connection;
@@ -16,22 +16,9 @@ public class DBDemo {
         System.out.println("welcome to employee-payroll mysql");
 
         String jdbcURL = "jdbc:mysql://localhost:3306/payroll_service?useSSL=false";
-
-        /**
-         * The default username for the mysql database is root.
-         */
         String userName = "root";
-
-        /**
-         * It is the password given by the user at the time of installing the mysql
-         * database
-         */
         String password = "Archana@123";
         Connection connection;
-
-        /**
-         * try and catch block to handle the exceptions
-         */
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver loaded");
@@ -49,19 +36,9 @@ public class DBDemo {
 
     }
 
-    /**
-     * created method listDrivers() to List the drivers being loaded
-     */
     private static void listDrivers() {
 
-        /**
-         * Retrieving the list of all the Drivers
-         */
         Enumeration<Driver> driverList = DriverManager.getDrivers();
-
-        /**
-         * Printing the list
-         */
         while (driverList.hasMoreElements()) {
             Driver driverClass = (Driver) driverList.nextElement();
             System.out.println("   " + driverClass.getClass().getName());
